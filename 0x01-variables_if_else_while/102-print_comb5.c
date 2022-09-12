@@ -6,6 +6,7 @@
 int main(void)
 {
 int d1, d2, d3, d4, n = 0;
+
 for (d1 = '0'; d1 <= '9'; d1++)
 {
 for (d2 = '0'; d2 <= '9'; d2++)
