@@ -4,23 +4,28 @@
 #include <string.h>
 
 /**
- * _strdup -  returns a pointer to a newly allocated space
- * @str: string to be copied
- * Return: On success, a pointer to the duplicated string;
- * NULL if failed or insufficient memory was allocated
+ * string_nconcat - concatenate the first n bytes of a string to another
+ * @str1: pointer to the first string
+ * @str2: pointer to the second string
+ * @size: size of str2 to be concatenated
+ * Return: pointer to the concatenated string
  */
 
-char *_strdup(char *str)
+char *string_nconcat(char *str1, char *str2, unsigned int size)
 {
-	int size = 0;
-	char *strCopy;
+	unsigned int dist1, dist2;
+	char *ptr;
 
-	if (str == NULL)
-		return (NULL);
-	for (; str[size] != '\0'; size++);
-	strCopy = malloc(size * sizeof(*str) + 1);
-	if (strCopy == 0)
-		return (NULL);
-	strcpy(strCopy, str);
-	return (strCopy);
+	if (str1 == NULL)
+	str1 = "";
+	if (str2 == NULL)
+	str2 = "";
+	dist1 = strlen(str1);
+	dist2 = strlen(str2) <= size ? strlen(str2) : size;
+	ptr = malloc(dist1 + dist2 + 1);
+	if (ptr == NULL)
+	return (NULL);
+	strcpy(ptr, str1);
+	strncat(ptr, str2, size);
+return (ptr);
 }
