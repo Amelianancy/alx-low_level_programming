@@ -1,55 +1,26 @@
 #include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stddef.h>
 
 /**
- * * string_nconcat -	Adds specific number of bytes of one string to another
- * * @s1:				The first string
- * * @s2:				The string to be added to @s1
- * * @n:				Number of bytes of @s2 to be added to @s1
- * * Return:			Pointer to memory containing s1 + s2
- * *					NULL if the function fails
- * */
+ * _strdup -  returns a pointer to a newly allocated space
+ * @str: string to be copied
+ * Return: On success, a pointer to the duplicated string;
+ * NULL if failed or insufficient memory was allocated
+ */
 
-char *string_nconcat(char *s1, char *s2, unsigned int n)
+char *_strdup(char *str)
 {
-	char *new;
-	int i, j, len1, len2;
+	int size = 0;
+	char *strCopy;
 
-	len1 = strlen(s1);
-	len2 = strlen(s2);
-
-	if (n > len2)
-			n = len2;
-
-	new = malloc(sizeof(char) * (len1 + len2) +1);
-
-	if (!new)
-			return (NULL);
-
-	i = 0;
-	while (s1[i] != '\0')
-			{
-					new[i] = s1[i];
-						i++;
-							}
-
-	j = len1;
-
-	if (s2 != NULL)
-			{
-					for (i = 0; i < n; i++)
-								{
-											new[j + i] = s2[i];
-													}
-						}
-
-	else
-			{
-					new[j] = ' ';
-						new[j + 1] = '\0';
-							}
-
-	return (new);
+	if (str == NULL)
+		return (NULL);
+	for (; str[size] != '\0'; size++);
+	strCopy = malloc(size * sizeof(*str) + 1);
+	if (strCopy == 0)
+		return (NULL);
+	strcpy(strCopy, str);
+	return (strCopy);
 }
