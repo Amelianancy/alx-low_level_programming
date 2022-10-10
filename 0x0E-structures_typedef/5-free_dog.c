@@ -5,7 +5,7 @@
  * free_dog - Frees a dog
  * @d: A dog struct
  * Return: Null void
- * */
+ */
 
 void free_dog(dog_t *d)
 {
