@@ -2,21 +2,6 @@
 #define LISTS_H
 
 /**
- *
- * File: lists.h
- *
- * Auth: Temesgen Zewude
- *
- * Desc: Header file containing prototypes and definitions for all functions
- *
- * and types written in the 0x12-singly_linked_lists directory.
- *
-*/
-
-#include <stdlib.h>
-
-/**
- *
  * struct list_s - singly linked list
  *
  * @str: string - (malloc'ed string)
@@ -27,7 +12,7 @@
  *
  * Description: singly linked list node structure
  *
- * for ALX project
+ *   for ALX project
  *
  */
 
