@@ -12,7 +12,7 @@
  *
  * Description: singly linked list node structure
  *
- *   for ALX project
+ * for ALX project
  *
  */
 
